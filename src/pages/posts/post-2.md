@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/PostLayout.astro
 title: 'Second post'
 pubDate: 2023-10-03
 description: 'Test post.'
