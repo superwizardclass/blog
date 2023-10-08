@@ -1,16 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Introduction from '../components/Introduction.astro';
 import PostPreview from '../components/PostPreview.astro'
 const posts = await Astro.glob('../pages/posts/*.md')
 ---
 
-<Layout title="blog one: HOME">
-	<section class="mx-auto">
-		<p class="text-xs"><sup class="text-sm">*</sup>not big enough to be a super blog... yet.</p>
-	</section>
+<Layout title="home">
+	<h1 class="bg-gradient-to-r from-indigo-600 to-pink-500 text-white text-2xl font-bold text-center py-3">hello world.</h1>
+	<Introduction>
+		<p>Just a small patch on the internet from a developer from Vancouver.</p>
+		<p>Mostly sharing small projects and solutions.</p>
+	</Introduction>
 	<h1 class="text-base">recent posts</h1>
 	<section class="flex flex-col gap-3">
 		{posts.map((post) => <PostPreview title={post.frontmatter.title} url={post.url} description={post.frontmatter.description}></PostPreview>)}
+	</section>
+	<section class="mx-auto mt-auto">
+		<p class="text-xs"><sup class="text-sm">*</sup>not big enough to be a super blog... yet.</p>
 	</section>
 </Layout>
 
