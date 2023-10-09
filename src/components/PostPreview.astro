@@ -1,9 +1,10 @@
 ---
-const { title, url, description } = Astro.props
+const { title, url, description, pubDate } = Astro.props
 ---
 
 <article class="bg-slate-400 flex flex-col gap-2 rounded px-2 py-2">
     <h1>{title}</h1>
+    <p class="">{pubDate.slice(0,10)}</p> 
     <p class="text-sm">{description}</p>
     <a class="text-sm self-end" href={url}>read post.</a>
 </article>
