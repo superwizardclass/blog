@@ -4,7 +4,7 @@ import Introduction from '../components/Introduction.astro'
 import PostPreview from '../components/PostPreview.astro'
 const posts = await Astro.glob('../pages/posts/*.md')
 const publishedPosts = await posts.filter(post => post.frontmatter.publish)
-const profilePic = '/blog-profile-pic.jpg'
+const profilePic = '/blog/blog-profile-pic.jpg'
 ---
 
 <Layout title="home">
