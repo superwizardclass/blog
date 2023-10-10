@@ -13,6 +13,7 @@
     "@astrojs/tailwind": "^5.0.0",
     "@fontsource-variable/cabin": "^5.0.9",
     "astro": "^3.2.2",
+    "dayjs": "^1.11.10",
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
