@@ -1,17 +1,21 @@
 ---
 import dayjs from "dayjs";
 const { title, url, description, pubDate } = Astro.props;
-const convertedDate = dayjs(pubDate).add(1, 'day').format('MMM DD, YYYY')
+const convertedDate = dayjs(pubDate).add(1, "day").format("MMM DD, YYYY");
 ---
 
 <article class="flex flex-col gap-2 shadow-lg">
-  <div class="flex flex-col sm:flex-row items-center sm:justify-center gap-2 bg-gradient-to-r from-cyan-600 to-blue-500 px-6 py-3">
-    <h1 class="text-white text-center  lg:text-lg font-bold">{title}</h1>
-    <p class="text-stone-800 font-medium">{convertedDate}</p>
+  <div
+    class="flex flex-col items-center gap-2 bg-gradient-to-r from-cyan-600 to-blue-500 px-6 py-3 sm:flex-row sm:justify-center"
+  >
+    <h1 class="text-center font-bold text-white lg:text-lg">{title}</h1>
+    <p class="font-medium text-stone-800">{convertedDate}</p>
   </div>
 
-  <div class="flex flex-col gap-2 text-stone-800 px-6 py-2">
+  <div class="flex flex-col gap-2 px-6 py-2 text-stone-800">
     <p class="text-sm italic">{description}</p>
-    <a class="text-lg font-bold  self-end hover:text-indigo-500" href={url}>read post.</a>
+    <a class="self-end text-lg font-bold hover:text-indigo-500" href={url}
+      >read post.</a
+    >
   </div>
 </article>
