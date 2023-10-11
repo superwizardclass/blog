@@ -20,29 +20,27 @@ const profilePic = "/blog/blog-profile-pic.jpg";
       alt="github profile picture"
     />
     <p class="self-center text-xs leading-tight">
-      <>
-        Dan here, just wanted a small space on the internet to share cool stuff!
-      </>
+      Dan here, just wanted a small space on the internet to share cool stuff!
     </p>
-    <h1 class="px-2">recent posts</h1>
-    <section class="flex flex-col-reverse gap-3">
-      {
-        publishedPosts.map((post) => (
-          <PostPreview
-            title={post.frontmatter.title}
-            url={post.url}
-            description={post.frontmatter.description}
-            pubDate={post.frontmatter.pubDate}
-          />
-        ))
-      }
-    </section>
-    <section class="mx-auto mt-auto">
-      <p class="text-xs">
-        <sup class="text-sm">*</sup>not big enough to be a super blog... yet.
-      </p>
-    </section>
   </Introduction>
-
-  <style></style>
+  <h1 class="px-2">recent posts</h1>
+  <section class="flex flex-col-reverse gap-3">
+    {
+      publishedPosts.map((post) => (
+        <PostPreview
+          title={post.frontmatter.title}
+          url={post.url}
+          description={post.frontmatter.description}
+          pubDate={post.frontmatter.pubDate}
+        />
+      ))
+    }
+  </section>
+  <section class="mx-auto mt-auto">
+    <p class="text-xs">
+      <sup class="text-sm">*</sup>not big enough to be a super blog... yet.
+    </p>
+  </section>
 </Layout>
+
+<style></style>
