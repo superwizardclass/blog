@@ -5,11 +5,13 @@ const githubProfileUrl = "https://github.com/superwizardclass";
 const linkedinProfileUrl = "https://www.linkedin.com/in/dan3000";
 ---
 
-<footer class="flex h-20 justify-center gap-6 bg-stone-800 text-neutral-200">
-  <section class="my-auto">
-    <p class="text-sm text-sky-200">i can also be found here:</p>
-  </section>
-  <section class="flex items-center gap-4">
+<footer
+  class="flex flex-col items-center justify-center gap-2 sm:gap-5 bg-stone-800 text-neutral-200 sm:flex-row py-4"
+>
+    <section>
+        <p class="text-white text-center">let's connect</p>
+    </section>
+  <section class="flex items-center justify-center gap-4">
     <a href={githubProfileUrl}><img class="w-10" src={githubIcon} /></a>
     <a href={linkedinProfileUrl}><img class="w-10" src={linkedinIcon} /></a>
   </section>
