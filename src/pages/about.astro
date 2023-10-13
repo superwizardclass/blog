@@ -1,7 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ContentSection from "../components/ContentSection.astro";
+const profilePic = "/blog/blog-profile-pic.jpg";
 ---
 
 <Layout title="about">
-  <h1>About</h1>
+  <h1
+    class="bg-gradient-to-r from-indigo-600 to-pink-500 py-3 text-center text-2xl font-bold text-white"
+  >
+    about me.
+  </h1>
+
+  <ContentSection class="flex-col items-center sm:flex-row">
+    <div class="flex items-center gap-6">
+      <img
+        class="w-24 rounded-full"
+        src={profilePic}
+        alt="github profile picture"
+      />
+      <div class="text-center">
+        <p class=" text-lg font-bold">dan s.</p>
+        <p>&#127464;</p>
+    </div>
+    </div>
+    <p class="self-center text-xs leading-tight">
+      Dan here, just wanted a small space on the internet to share cool stuff!
+    </p>
+  </ContentSection>
 </Layout>
