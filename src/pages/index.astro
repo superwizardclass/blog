@@ -2,6 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import ContentSection from "../components/ContentSection.astro";
 import PostPreview from "../components/PostPreview.astro";
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+dayjs.extend(utc);
 const posts = await Astro.glob("../pages/posts/*.md");
 const publishedPosts = await posts.filter((post) => post.frontmatter.publish);
 const profilePic = "/blog/blog-profile-pic.jpg";
@@ -13,29 +16,34 @@ const profilePic = "/blog/blog-profile-pic.jpg";
   >
     hi all.
   </h1>
-  <ContentSection>
-    <img
-      class="w-20 rounded-full"
-      src={profilePic}
-      alt="github profile picture"
-    />
-    <p class="self-center text-xs leading-tight">
-      Dan here, just wanted a small space on the internet to share cool stuff!
-    </p>
-  </ContentSection>
-  <h1 class="px-2">recent posts</h1>
-  <section class="flex flex-col-reverse gap-3">
-    {
-      publishedPosts.map((post) => (
-        <PostPreview
-          title={post.frontmatter.title}
-          url={post.url}
-          description={post.frontmatter.description}
-          pubDate={post.frontmatter.pubDate}
-        />
-      ))
-    }
-  </section>
+  <div class="flex flex-col gap-4 sm:flex-row mx-auto w-full justify-center">
+    <ContentSection class="self-start mx-auto">
+      <img
+        class="rounded-full w-20 self-center"
+        src={profilePic}
+        alt="github profile picture"
+      />
+      <p class="self-center text-xs leading-tight">
+        Dan here, just wanted a small space on the internet to share cool stuff!
+      </p>
+    </ContentSection>
+    <section class="flex flex-col gap-2 flex-1">
+      <h1 class="px-2">recent posts</h1>
+      <div class="flex flex-col-reverse gap-3">
+        {
+          publishedPosts.map((post) => (
+            <PostPreview
+              title={post.frontmatter.title}
+              url={post.url}
+              description={post.frontmatter.description}
+              pubDate={dayjs(post.frontmatter.pubDate).utc().format('MMM DD, YYYY')}
+            />
+          ))
+        }
+      </div>
+    </section>
+  </div>
+
   <section class="mx-auto mt-auto">
     <p class="text-xs">
       <sup class="text-sm">*</sup>not big enough to be a super blog... yet.
