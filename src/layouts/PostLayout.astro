@@ -4,12 +4,26 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
 const { frontmatter } = Astro.props;
-const formattedPubDate = dayjs(frontmatter.pubDate).utc().format('MMM DD, YYYY')
+const formattedPubDate = dayjs(frontmatter.pubDate)
+  .utc()
+  .format("MMM DD, YYYY");
+const lowercasePubDate = formattedPubDate.toLowerCase();
 ---
 
 <Layout title={frontmatter.title}>
-  <h1>{frontmatter.title}</h1>
-  <h2>Published on {formattedPubDate}</h2>
-  <p>Written by {frontmatter.author}</p>
-  <slot />
+  <div class="flex flex-col gap-2 pb-6">
+    <h1
+      class="bg-gradient-to-r from-indigo-600 to-pink-500 px-3 py-3 text-center text-2xl font-bold text-white justify-center items-center"
+    >
+      {frontmatter.title}
+    </h1>
+    <div class="flex gap-1 text-sm items-center justify-center">
+        <h2 class="">published by <span class="font-bold">{frontmatter.author}</span></h2>
+        <p class="italic">{lowercasePubDate}</p>
+    </div>
+    
+    <div class="px-4 font-extralight leading-snug">
+      <slot />
+    </div>
+  </div>
 </Layout>
