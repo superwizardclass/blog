@@ -5,5 +5,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://superwizardclass.github.io/',
   base:'/blog',
-  integrations: [tailwind()]
+  integrations: [tailwind({
+    applyBaseStyles: true,
+  })]
 });
