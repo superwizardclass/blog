@@ -1,11 +1,11 @@
 ---
-import PostContent from "../components/PostContent.astro";
 import Layout from "./Layout.astro";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 
 dayjs.extend(utc);
 const { frontmatter } = Astro.props;
+console.log(frontmatter);
 const formattedPubDate = dayjs(frontmatter.pubDate)
   .utc()
   .format("MMM DD, YYYY");
@@ -25,12 +25,9 @@ const lowercasePubDate = formattedPubDate.toLowerCase();
       </h2>
       <p class="italic">{lowercasePubDate}</p>
     </div>
-    <PostContent>
+    <div class="prose prose-sm prose-slate sm:prose-base mx-auto">
       <slot/>
-    </PostContent>
+    </div>
   </div>
 </Layout>
-<style>
-  h1 {
-  }
-</style>
+
