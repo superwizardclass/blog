@@ -5,7 +5,6 @@ import utc from "dayjs/plugin/utc";
 
 dayjs.extend(utc);
 const { frontmatter } = Astro.props;
-console.log(frontmatter);
 const formattedPubDate = dayjs(frontmatter.pubDate)
   .utc()
   .format("MMM DD, YYYY");
