@@ -16,19 +16,18 @@ const profilePic = "/blog/blog-profile-pic.jpg";
   >
     hi all.
   </h1>
-  <div class="flex flex-col gap-4 sm:flex-row mx-auto w-full justify-center">
-    <ContentSection class="self-start mx-auto">
+  <div class="mx-auto flex w-full flex-col justify-center gap-4">
+    <ContentSection class="mx-auto self-start">
       <img
-        class="rounded-full w-20 self-center"
+        class="w-20 self-center rounded-full"
         src={profilePic}
         alt="github profile picture"
       />
-      <p class="self-center text-xs leading-tight">
-        Dan here, just wanted a small space on the internet to share cool stuff!
+      <p class="self-center text-lg leading-tight">
+        I write about mostly about programming.
       </p>
     </ContentSection>
-    <section class="flex flex-col gap-2 flex-1">
-      <h1 class="px-2">recent posts</h1>
+    <section class="mx-auto flex max-w-4xl flex-1 flex-col gap-2">
       <div class="flex flex-col-reverse gap-3">
         {
           publishedPosts.map((post) => (
@@ -36,19 +35,15 @@ const profilePic = "/blog/blog-profile-pic.jpg";
               title={post.frontmatter.title}
               url={post.url}
               description={post.frontmatter.description}
-              pubDate={dayjs(post.frontmatter.pubDate).utc().format('MMM DD, YYYY')}
+              pubDate={dayjs(post.frontmatter.pubDate)
+                .utc()
+                .format("MMM DD, YYYY")}
             />
           ))
         }
       </div>
     </section>
   </div>
-
-  <section class="mx-auto mt-auto">
-    <p class="text-xs">
-      <sup class="text-sm">*</sup>not big enough to be a super blog... yet.
-    </p>
-  </section>
 </Layout>
 
 <style></style>
