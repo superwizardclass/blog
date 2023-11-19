@@ -1,47 +1,64 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.framework.id": "astro",
-  "frontMatter.preview.host": "http://localhost:4321",
+  "frontMatter.preview.host": "http://localhost:4321/blog",
   "frontMatter.content.publicFolder": "public",
   "frontMatter.content.pageFolders": [
     {
       "title": "posts",
-      "path": "[[workspace]]/src/pages/posts"
+      "path": "[[workspace]]/src/content/posts"
     }
   ],
   "frontMatter.taxonomy.contentTypes": [
     {
-      "name": "default",
+      "name": "posts",
+      "previewPath": "'posts'",
       "pageBundle": false,
-      "previewPath": "'blog'",
-      "filePrefix": null,
-      "clearEmpty": true,
+      "clearEmpty": false,
       "fields": [
         {
-          "title": "Title",
           "name": "title",
           "type": "string",
-          "single": true
+          "single": true,
+          "required": true
         },
         {
-          "title": "Description",
-          "name": "description",
-          "type": "string"
-        },
-        {
-          "title": "Publishing date",
           "name": "pubDate",
           "type": "datetime",
           "default": "{{now}}",
-          "isPublishDate": true
+          "required": true
         },
         {
-          "title": "Content preview",
-          "name": "heroImage",
-          "type": "image",
-          "isPreviewImage": true
+          "name": "description",
+          "type": "string",
+          "single": true,
+          "required": true
+        },
+        {
+          "name": "tags",
+          "type": "list",
+          "required": true
+        },
+        {
+          "name": "image",
+          "type": "string",
+          "single": true,
+          "required": false,
+          "default": ""
+        },
+        {
+          "name": "publish",
+          "type": "boolean",
+          "required": true
+        },
+        {
+          "name": "author",
+          "type": "string",
+          "required": true,
+          "default": "dan"
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.website.host": "https://superwizardclass.github.io/blog/"
 }
