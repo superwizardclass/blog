@@ -1,5 +1,5 @@
 ---
-title: Guitar, Music Theory and Abstraction in Programming
+title: Guitar, Tones, Abstraction in Programming
 pubDate: 2023-11-29T21:01:39.407Z
 description: "For most guitartists, the fretboard is such a complicated mess that we need a system and a set of rules just to traverse it."
 tags: ["music", "blog", "programming", "oop"]
@@ -9,22 +9,18 @@ author: dan
 type: posts
 ---
 
-# What is an abstraction?
+# The premise of this post
 
-This is often a term that's thrown around a lot in programming articles and discussions. The typical definition usually goes something along the lines of hiding information and creating generalizations. I didn't really understand this definition because it entangles itself with encapsulation, which also involves hiding information. So for a good amount of time, my understanding of abstraction was basically encapsulation, just hiding information. And if it's the case, then why? Why "hide" information? These are questions that I eventually found some sort of answer to, but for this post I want to share my thoughts on the concept. It's a pretty interesting concept outside of programming because there is a level of practicality to it.
+This is a blog where I post mostly about programming. And that's true, programming is a rather large part of my life, I even attended and graduated from a place that provided training to be a developer, so I enjoy reading and writing about small topics regarding programming. I think reading and having access the amount of knowledge for developers is a large part of why I enjoy programming and its auxiliary topics. Another huge part of my life is music, well rather guitar. Just like programming I enjoy consuming all topcs regarding guitar, however there's one rather large difference between the two topics is that I have very poor understanding of the language of music, also known as music theory. I can tell you what dependency injection is and why it could be useful, but I couldn't provide an answer to something basic like the chord tones of let's say a B major chord (hint: it's B D# F#). So as much as I wanted to read about music and dive deeper into musical content such as why my favourite guitarists sound like they do or what to play over a dominant chord, the reality was that I couldn't, for two simple problems:
 
-## Music Theory and the Guitar
+1. I didn't know music theory well enough
+2. I didn't know the notes of my instrument well enough
 
-To outline the premise of this post, this is a bit of background information.
+It's a bit of an interesting position to be able to play guitar at a reasonable skill, but also have no idea what is being played and not being able to analyze it. Millions of guitarists have had tremondous success in playing their instrument without any theory, but personally I wasn't very happy knowing that I could be better. So, for 2023 my goals for guitar were:
 
-Music theory and applying it on the guitar is a bit of a difficult undertaking. A sound is created when we press down onto a fret and pluck the string. Pretty simple. However, once we get to learning note names, of which there are 12 in western music, it starts to get pretty hairy because the guitar has six strings and the amount of frets available. Meaning one note can have six diffrent locations (It's actually more because a typicaly guitar can have 21 to 24 frets). So assuming we have 24 frets with six strings, a guitarist would have to internalize 144 individual frets and their names. What makes learning and memorizing the notes on a guitar difficult is that the notes all look the same, the only diffrent is that it's a different fret or a different string. On a different instrument like the piano, each different note has a distinct physical key, even the natural notes (notes that are not flat or sharp) have a different shape from one another. On the guitar, whether the note is a natural or has a flat or sharp it's just a fret. Imagine spending the first half of the year just learning the fretboard in its entirety. It's maddening!
+1. Get comfortable reading music
+2. Learn and internalize all the notes on the fretboard
 
-So then what about music theory? Learning the principles regarding what makes a chord, what creates harmony, what is a key signature? Learning these principles on paper away from an instrument is relatively straight forward. It's almost logical to a degree. However, from my own experience I had a difficult time applying what I know to my instrument, the interface I used to create sound, my guitar because I still had not internalized the note names and locations on the instrument.
+## When the Fretboard Meets the Theory
 
-And that's typically the large challenge that guitarists face: either learn the notes or don't.
-
-Most people choose not to learn the notes of the instrument at all. In fact, out the people that play instruments, it's a high probabilty that people that play guitar don't know how to process the notes on their instruments. However, they do utilize some form of theory. It may not be comprehensize, but it's usable.
-
-## Guitar and Abstractions
-
-## Learn to Use Abstraction But Don't Rely on Them
+Learning the fretboard was a pretty large undertaking. The notes on the fretboard virtually look the same as another note so
